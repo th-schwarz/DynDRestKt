@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication()
-class DDautoktApplication
+class DDautoKtApplication
 
 fun main(args: Array<String>) {
-	runApplication<DDautoktApplication>(*args)
+	runApplication<DDautoKtApplication>(*args)
 }
