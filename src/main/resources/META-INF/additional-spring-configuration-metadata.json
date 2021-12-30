@@ -24,5 +24,10 @@
       "name": "autodns.user",
       "type": "java.lang.String",
       "description": "Description for autodns.user."
+    },
+    {
+      "name": "autodns.url",
+      "type": "java.lang.String",
+      "description": "Description for autodns.url."
     }
   ] }
