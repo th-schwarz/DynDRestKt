@@ -6,10 +6,13 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 @EnableConfigurationProperties
-@ConfigurationProperties(prefix = "autodns")
-class AutoDnsConfig {
-    lateinit var password: String
-    lateinit var url: String
-    lateinit var context: Integer
-    lateinit var user : String
+@ConfigurationProperties(prefix = "ddauto")
+class DDAutoConfig {
+    lateinit var zones: List<Zone>
+
+    class Zone {
+        lateinit var name: String
+        lateinit var ns: String
+        lateinit var hosts: List<String>
+    }
 }

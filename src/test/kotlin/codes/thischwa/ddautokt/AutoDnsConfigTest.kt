@@ -10,7 +10,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @SpringBootTest(classes = [AutoDnsConfig::class] )
 @ExtendWith(SpringExtension::class)
-internal class AutoDnsConfigTest  {
+class AutoDnsConfigTest  {
     @Autowired
     lateinit var config : AutoDnsConfig
 

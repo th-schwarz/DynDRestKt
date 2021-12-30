@@ -1,0 +1,28 @@
+{
+  "properties": [
+    {
+      "name": "zone.validation.enabled",
+      "type": "java.lang.String",
+      "description": "Description for zone.validation.enabled."
+    },
+    {
+      "name": "ddauto.zones",
+      "type": "java.lang.String",
+      "description": "Description for ddauto.zones."
+    },
+    {
+      "name": "autodns.context",
+      "type": "java.lang.String",
+      "description": "Description for autodns.context."
+    },
+    {
+      "name": "autodns.password",
+      "type": "java.lang.String",
+      "description": "Description for autodns.password."
+    },
+    {
+      "name": "autodns.user",
+      "type": "java.lang.String",
+      "description": "Description for autodns.user."
+    }
+  ] }

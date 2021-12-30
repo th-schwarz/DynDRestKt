@@ -14,9 +14,7 @@ logging:
 ## credentials for the domainrobot sdk
 autodns:
   context: 4
-  password: pwd
   url: https://api.autodns.com/v1
-  user: user
 
 ## enables the validation of the configured zones
 zone:
