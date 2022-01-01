@@ -1,13 +1,17 @@
 package codes.thischwa.ddautokt
 
+import mu.KotlinLogging
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
 @EnableConfigurationProperties(value = [AutoDnsConfig::class, DDAutoConfig::class])
-class DDautoKtApplication
+class DDAutoKtApplication
+
+private val log = KotlinLogging.logger {}
 
 fun main(args: Array<String>) {
-	runApplication<DDautoKtApplication>(*args)
+	log.info { "start processed" }
+    runApplication<DDAutoKtApplication>(*args)
 }
