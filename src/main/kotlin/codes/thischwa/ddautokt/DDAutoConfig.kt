@@ -40,7 +40,7 @@ class DDAutoConfig {
         return zoneData[zone]!!
     }
 
-    fun eadAndValidate() {
+    fun readAndValidate() {
         read()
         validate()
     }
@@ -58,7 +58,7 @@ class DDAutoConfig {
     fun read() {
         for (zone in zones) {
             zoneData[zone.name]= zone.ns
-            var hostData = zone.hosts
+            val hostData = zone.hosts
             if (hostData.isEmpty())
                 throw IllegalArgumentException("Missing host data for $zone")
             for (hostToken in hostData) {
@@ -75,6 +75,6 @@ class DDAutoConfig {
     class Zone {
         lateinit var name: String
         lateinit var ns: String
-        lateinit var hosts: List<String>
+        lateinit var hosts: ArrayList<String>  // not List because of testing
     }
 }
