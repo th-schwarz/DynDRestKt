@@ -37,7 +37,7 @@ class DDAutoConfigTest {
         assertEquals("ns0.domain.info", zone.ns)
 
         assertEquals("my0:1234567890abcdef", zone.hosts[0])
-        assertEquals("test1:1234567890abcdx", zone.hosts[1])
+        assertEquals("test0:1234567890abcdx", zone.hosts[1])
     }
 
     @Test

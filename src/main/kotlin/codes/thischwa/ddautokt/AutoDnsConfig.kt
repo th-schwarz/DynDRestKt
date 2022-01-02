@@ -10,6 +10,6 @@ import org.springframework.context.annotation.Configuration
 class AutoDnsConfig {
     lateinit var password: String
     lateinit var url: String
-    lateinit var context: Integer
+    var context: Int = 0
     lateinit var user : String
 }
