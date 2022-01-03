@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
-import java.io.InputStream
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ZoneUtilTest {
@@ -19,7 +18,7 @@ class ZoneUtilTest {
     @BeforeEach
     @Throws(Exception::class)
     fun setUp() {
-        val content : String = ZoneUtilTest::class.java.getResource("/zone-info.json").readText()
+        val content : String = ZoneUtilTest::class.java.getResource("zone-info.json").readText()
         val response = JsonUtils.deserialize(content.toByteArray(),
             JsonResponseDataZone::class.java)
         zone = response.data[0]
