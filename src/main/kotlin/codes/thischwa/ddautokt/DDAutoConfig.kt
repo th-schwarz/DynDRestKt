@@ -4,11 +4,13 @@ import mu.KotlinLogging
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Primary
 
+@Primary
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix = "ddauto")
-class DDAutoConfig {
+class DDAutoConfig : BeanInitialisation {
 
     lateinit var zones: List<Zone>
 
@@ -19,6 +21,11 @@ class DDAutoConfig {
 
     // <fqdn, apitoken>
     private var apitokenData  = mutableMapOf<String, String>()
+
+    override fun initMe() {
+        read()
+        validate()
+    }
 
     fun configuredHosts() : Set<String> = apitokenData.keys
 
@@ -34,11 +41,6 @@ class DDAutoConfig {
     fun primaryNameServer(zone : String) : String {
         require(zoneData.containsKey(zone)) { "Zone isn't configured: $zone" }
         return zoneData[zone]!!
-    }
-
-    fun readAndValidate() {
-        read()
-        validate()
     }
 
     fun validate() {

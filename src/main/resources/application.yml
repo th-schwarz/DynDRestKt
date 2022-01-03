@@ -7,6 +7,11 @@ server:
     context-path: /
   shutdown: graceful
 
+## import individual config
+spring:
+  config:
+    import: optional:file:./ddauto.yml
+
 logging:
   level:
     web: debug
