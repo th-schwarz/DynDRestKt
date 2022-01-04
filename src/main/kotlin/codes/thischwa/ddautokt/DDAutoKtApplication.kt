@@ -5,14 +5,17 @@ import mu.KotlinLogging
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication
+import org.springframework.context.annotation.Configuration
+
 
 @SpringBootApplication
+@Configuration
 @EnableConfigurationProperties(value = [AutoDnsConfig::class])
 class DDAutoKtApplication
 
 private val log = KotlinLogging.logger {}
 
 fun main(args: Array<String>) {
-	log.info { "Processing start of DDAuto" }
-	runApplication<DDAutoKtApplication>(*args)
+    log.info { "Processing start of DDAuto" }
+    runApplication<DDAutoKtApplication>(*args)
 }

@@ -34,7 +34,7 @@ class ZoneSdk {
     fun validateConfiguredZones() {
         for (z in config.configuredZones()) {
             val zone: Zone = zoneInfo(z, config.primaryNameServer(z))
-            log.info("Zone correct initialized: {}", zone.getOrigin())
+            log.info("Zone correct initialized: {}", zone.origin)
         }
     }
 
@@ -42,7 +42,7 @@ class ZoneSdk {
     fun zoneInfo(origin: String, primaryNameServer: String): Zone {
         val zc = getInstance()
         return try {
-            zc.info(origin, primaryNameServer, customHeaders)
+            zc.info(origin, primaryNameServer, HashMap(customHeaders))
         } catch (e: DomainrobotApiException) {
             throw ZoneSdkException("API exception", e)
         } catch (e: Exception) {
@@ -83,7 +83,7 @@ class ZoneSdk {
         // processing the update
         val zc = getInstance()
         try {
-            zc.update(zone, customHeaders)
+            zc.update(zone, HashMap(customHeaders))
         } catch (e: DomainrobotApiException) {
             throw ZoneSdkException("API exception", e)
         } catch (e: java.lang.Exception) {
