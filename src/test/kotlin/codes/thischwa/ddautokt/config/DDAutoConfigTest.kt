@@ -1,4 +1,4 @@
-package codes.thischwa.ddautokt
+package codes.thischwa.ddautokt.config
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertThrows
@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@SpringBootTest(classes = [DDAutoConfig::class])
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ExtendWith(SpringExtension::class)
 class DDAutoConfigTest {
 
@@ -27,12 +27,12 @@ class DDAutoConfigTest {
 
     @Test
     fun testCountZones() {
-        assertEquals(configuredEntries, config.zones.size)
+        assertEquals(configuredEntries, config.data.zones.size)
     }
 
     @Test
     fun testZoneDetails() {
-        val zone: DDAutoConfig.Zone = config.zones[0]
+        val zone: DDAutoConfigData.Zone = config.data.zones[0]
         assertEquals("dynhost0.info", zone.name)
         assertEquals("ns0.domain.info", zone.ns)
 
@@ -66,7 +66,7 @@ class DDAutoConfigTest {
     @Test
     fun testWrongHostFormat() {
         val wrongHost = "wrong-formatted.host"
-        var z : DDAutoConfig.Zone = config.zones[0]
+        val z : DDAutoConfigData.Zone = config.data.zones[0]
         z.hosts.add(wrongHost)
         assertThrows(IllegalArgumentException::class.java) { config.read() }
         z.hosts.remove(wrongHost)
@@ -74,8 +74,8 @@ class DDAutoConfigTest {
 
     @Test
     fun testEmptyHosts() {
-        val z  : DDAutoConfig.Zone = config.zones[1]
-        var hosts = ArrayList(z.hosts)
+        val z  : DDAutoConfigData.Zone = config.data.zones[1]
+        val hosts = ArrayList(z.hosts)
         z.hosts.clear()
         assertThrows(IllegalArgumentException::class.java) { config.read() }
         z.hosts = hosts
