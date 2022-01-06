@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.context.event.ContextRefreshedEvent
 import org.springframework.stereotype.Component
 
-
 @Configuration
 class AppConfig {
 
@@ -34,7 +33,7 @@ class AppConfig {
 }
 
 @Component
-class AppEventListener : ApplicationListener<ContextRefreshedEvent> {
+class AppEventListenerCtxRefreshed : ApplicationListener<ContextRefreshedEvent> {
 
     override fun onApplicationEvent(event: ContextRefreshedEvent) {
         val ctx = event.applicationContext
