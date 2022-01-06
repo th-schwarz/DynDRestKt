@@ -21,10 +21,10 @@ class ZoneSdk {
     private val customHeaders: Map<String, String> = mapOf(DomainRobotHeaders.DOMAINROBOT_HEADER_WEBSOCKET to "NONE")
 
     @Autowired
-    lateinit var autoDnsConfig : AutoDnsConfig
+    private lateinit var autoDnsConfig : AutoDnsConfig
 
     @Autowired
-    lateinit var config: DDAutoConfig
+    private lateinit var config: DDAutoConfig
 
     private fun getInstance(): ZoneClient {
         return Domainrobot(autoDnsConfig.user, autoDnsConfig.context.toString(), autoDnsConfig.password,

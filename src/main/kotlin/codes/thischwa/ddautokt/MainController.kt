@@ -23,10 +23,10 @@ class MainController {
     private val logger = KotlinLogging.logger {}
 
     @Autowired
-    lateinit var conf: DDAutoConfig
+    private lateinit var conf: DDAutoConfig
 
     @Autowired
-    lateinit var sdk : ZoneSdk
+    private lateinit var sdk : ZoneSdk
 
     @GetMapping(value = ["/exist/{host}"], produces = [MediaType.TEXT_PLAIN_VALUE])
     fun exist(@PathVariable host: String): ResponseEntity<String> {
@@ -40,12 +40,12 @@ class MainController {
     fun update(
         @PathVariable host: String,
         @RequestParam apitoken: String,
-        @RequestParam(name = "ipv4", required = false) ipv4Str: String?,
-        @RequestParam(name = "ipv6", required = false) ipv6Str: String?,
+        @RequestParam(name = "ipv4", required = false) ipv4: String?,
+        @RequestParam(name = "ipv6", required = false) ipv6: String?,
         req: HttpServletRequest,
     ): ResponseEntity<String?>? {
-        var ipv4Str = ipv4Str
-        var ipv6Str = ipv6Str
+        var ipv4Str = ipv4
+        var ipv6Str = ipv6
         logger.debug("entered #update: host={}, apitoken={}, ipv4={}, ipv6={}", host, apitoken, ipv4Str, ipv6Str)
 
         // validation
@@ -87,7 +87,7 @@ class MainController {
     fun info(@PathVariable host: String): ResponseEntity<String?>? {
         logger.debug("entered #info: host={}", host)
         if (!conf.hostExists(host)) return ResponseEntity("Host not found.", HttpStatus.NOT_FOUND)
-        var zone = try {
+        val zone = try {
             sdk.zoneInfo(host)
         } catch (e: ZoneSdkException) {
             logger.error("Zone info failed for: $host", e)
