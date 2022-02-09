@@ -1,6 +1,6 @@
 dist: bionic
 language:  java
-jdk: openjdk11
+jdk: openjdk8
 
 install: true
 script: 
