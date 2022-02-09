@@ -19,7 +19,7 @@
 		<kotlin.version>1.6.10</kotlin.version>
 		<domainrobot.version>0.2.8</domainrobot.version>
 		<log4j2.version>2.17.1</log4j2.version>
-		<fakerepo.dir>${project.basedir}/fake-repo</fakerepo.dir>
+		<fakerepo.dir>${basedir}/fake-repo</fakerepo.dir>
 	</properties>
 
 	<repositories>
