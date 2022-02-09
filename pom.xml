@@ -75,11 +75,15 @@
 			<groupId>org.domainrobot</groupId>
 			<artifactId>sdk-model</artifactId>
 			<version>${domainrobot.version}</version>
+			<scope>system</scope>
+			<systemPath>${fakerepo.dir}/org/domainrobot/sdk-model/0.2.8/sdk-model-0.2.8.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.domainrobot</groupId>
 			<artifactId>sdk-client</artifactId>
 			<version>${domainrobot.version}</version>
+			<scope>system</scope>
+			<systemPath>${fakerepo.dir}/org/domainrobot/sdk-client/0.2.8/sdk-client-0.2.8.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -109,6 +113,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
