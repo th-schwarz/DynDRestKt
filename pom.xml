@@ -22,6 +22,16 @@
 		<fakerepo.dir>${project.basedir}/fake-repo</fakerepo.dir>
 	</properties>
 
+	<repositories>
+		<repository>
+			<!-- DO NOT set id to "local" because it is reserved by Maven -->
+			<!-- This is a fake maven repo. -->
+			<id>fake-repo</id>
+			<name>Just a fake repository.</name>
+			<url>file://${fakerepo.dir}</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -65,15 +75,11 @@
 			<groupId>org.domainrobot</groupId>
 			<artifactId>sdk-model</artifactId>
 			<version>${domainrobot.version}</version>
-			<scope>system</scope>
-			<systemPath>${fakerepo.dir}/org/domainrobot/sdk-model/0.2.8/sdk-model-0.2.8.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.domainrobot</groupId>
 			<artifactId>sdk-client</artifactId>
 			<version>${domainrobot.version}</version>
-			<scope>system</scope>
-			<systemPath>${fakerepo.dir}/org/domainrobot/sdk-client/0.2.8/sdk-client-0.2.8.jar</systemPath>
 		</dependency>
 
 		<dependency>
