@@ -21,7 +21,7 @@ class AppConfig {
 
     @Bean
     fun createApplicationReadyListener(sdk: ZoneSdk): ApplicationListener<ApplicationReadyEvent?>? {
-        return ApplicationListener { e: ApplicationReadyEvent? ->
+        return ApplicationListener {
             if (zoneValidation) {
                 log.debug("Process zone-validation ...")
                 sdk.validateConfiguredZones()
