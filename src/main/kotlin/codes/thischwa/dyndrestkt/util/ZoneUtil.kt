@@ -19,7 +19,7 @@ class ZoneUtil {
         var RR_AAAA = "AAAA"
 
         fun deriveZone(host: String): String {
-            val cnt = host.chars().filter { ch: Int -> ch == '.'.code }.count()
+            val cnt = host.toCharArray().filter { ch: Char -> ch == '.' }.count()
             require(cnt >= 2) { "'host' must be a sub domain." }
             return host.substring(host.indexOf(".") + 1)
         }
@@ -85,7 +85,7 @@ class ZoneUtil {
 
         fun searchResourceRecord(zone: Zone, name: String, type: String): ResourceRecord? {
             val rrO: Optional<ResourceRecord> = zone.resourceRecords.stream()
-                .filter { rr: org.domainrobot.sdk.models.generated.ResourceRecord -> rr.type == type && rr.name == name }
+                .filter { rr: ResourceRecord -> rr.type == type && rr.name == name }
                 .findFirst()
             return if (rrO.isPresent) rrO.get() else null
         }
