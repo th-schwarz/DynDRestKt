@@ -1,4 +1,4 @@
-package codes.thischwa.ddautokt.util
+package codes.thischwa.dyndrestkt.util
 
 import org.domainrobot.sdk.models.generated.ResourceRecord
 import org.domainrobot.sdk.models.generated.Zone

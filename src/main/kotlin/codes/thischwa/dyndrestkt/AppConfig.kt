@@ -1,7 +1,7 @@
-package codes.thischwa.ddautokt
+package codes.thischwa.dyndrestkt
 
-import codes.thischwa.ddautokt.config.BeanInitializer
-import codes.thischwa.ddautokt.service.ZoneSdk
+import codes.thischwa.dyndrestkt.config.BeanInitializer
+import codes.thischwa.dyndrestkt.service.ZoneSdk
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.context.event.ApplicationReadyEvent

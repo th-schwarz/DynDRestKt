@@ -1,4 +1,4 @@
-package codes.thischwa.ddautokt.config
+package codes.thischwa.dyndrestkt.config
 
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Autowired

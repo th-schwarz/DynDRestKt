@@ -1,4 +1,4 @@
-package codes.thischwa.ddautokt.config
+package codes.thischwa.dyndrestkt.config
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

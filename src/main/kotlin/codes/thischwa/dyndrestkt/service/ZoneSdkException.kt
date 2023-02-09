@@ -1,4 +1,4 @@
-package codes.thischwa.ddautokt.service
+package codes.thischwa.dyndrestkt.service
 
 class ZoneSdkException : RuntimeException {
     constructor(message: String?, cause: Throwable?) : super(message, cause) {}

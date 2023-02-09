@@ -1,8 +1,8 @@
-package codes.thischwa.ddautokt.service
+package codes.thischwa.dyndrestkt.service
 
-import codes.thischwa.ddautokt.config.AutoDnsConfig
-import codes.thischwa.ddautokt.config.DDAutoConfig
-import codes.thischwa.ddautokt.util.ZoneUtil
+import codes.thischwa.dyndrestkt.config.AutoDnsConfig
+import codes.thischwa.dyndrestkt.config.DDAutoConfig
+import codes.thischwa.dyndrestkt.util.ZoneUtil
 import mu.KotlinLogging
 import org.domainrobot.sdk.client.Domainrobot
 import org.domainrobot.sdk.client.clients.ZoneClient

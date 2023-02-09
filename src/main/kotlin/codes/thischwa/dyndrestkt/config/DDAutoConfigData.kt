@@ -1,4 +1,4 @@
-package codes.thischwa.ddautokt.config
+package codes.thischwa.dyndrestkt.config
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.boot.context.properties.EnableConfigurationProperties

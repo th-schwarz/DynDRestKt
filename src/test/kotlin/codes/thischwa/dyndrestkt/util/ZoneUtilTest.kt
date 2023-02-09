@@ -1,4 +1,4 @@
-package codes.thischwa.ddautokt.util
+package codes.thischwa.dyndrestkt.util
 
 import org.domainrobot.sdk.client.JsonUtils
 import org.domainrobot.sdk.models.generated.JsonResponseDataZone

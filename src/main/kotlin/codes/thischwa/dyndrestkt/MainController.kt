@@ -1,9 +1,9 @@
-package codes.thischwa.ddautokt
+package codes.thischwa.dyndrestkt
 
-import codes.thischwa.ddautokt.config.DDAutoConfig
-import codes.thischwa.ddautokt.service.ZoneSdk
-import codes.thischwa.ddautokt.service.ZoneSdkException
-import codes.thischwa.ddautokt.util.ZoneUtil
+import codes.thischwa.dyndrestkt.config.DDAutoConfig
+import codes.thischwa.dyndrestkt.service.ZoneSdk
+import codes.thischwa.dyndrestkt.service.ZoneSdkException
+import codes.thischwa.dyndrestkt.util.ZoneUtil
 import mu.KotlinLogging
 import org.domainrobot.sdk.models.generated.ResourceRecord
 import org.springframework.beans.factory.annotation.Autowired
