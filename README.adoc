@@ -1,0 +1,7 @@
+= DynDRestKt
+
+https://github.com/th-schwarz/DynDRestKt[DynDRestKt] rewritten in kotlin, just to learn the language!
+
+image:https://github.com/th-schwarz/DynDRestKt/actions/workflows/maven.yml/badge.svg[Build Status]
+
+The state of the project is alpha!
