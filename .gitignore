@@ -30,6 +30,4 @@ hs_err_pid*
 /.springBeans
 /info.txt
 /.idea/
-!/.project
-!/.classpath
-!/ddauto.yml
+/dydrest.yml

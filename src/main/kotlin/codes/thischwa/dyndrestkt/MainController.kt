@@ -1,20 +1,7 @@
 package codes.thischwa.dyndrestkt
 
-import codes.thischwa.dyndrestkt.config.DDAutoConfig
-import codes.thischwa.dyndrestkt.service.ZoneSdk
-import codes.thischwa.dyndrestkt.service.ZoneSdkException
-import codes.thischwa.dyndrestkt.util.ZoneUtil
 import mu.KotlinLogging
-import org.domainrobot.sdk.models.generated.ResourceRecord
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.http.HttpStatus
-import org.springframework.http.MediaType
-import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
-import javax.servlet.http.HttpServletRequest
 
 
 @RestController
@@ -22,7 +9,7 @@ class MainController {
 
     private val logger = KotlinLogging.logger {}
 
-    @Autowired
+   /* @Autowired
     private lateinit var conf: DDAutoConfig
 
     @Autowired
@@ -76,9 +63,9 @@ class MainController {
         } catch (e: ZoneSdkException) {
             logger.error("Updated host failed: $host", e)
             return ResponseEntity("Update failed!", HttpStatus.INTERNAL_SERVER_ERROR)
-        } /*catch (e: UpdateLoggerException) {
+        } *//*catch (e: UpdateLoggerException) {
             logger.error("Error while writing to zone log.", e)
-        }*/
+        }*//*
         return ResponseEntity.ok("Update successful.")
     }
 
@@ -114,5 +101,5 @@ class MainController {
         memInfo.append(String.format("Max:   %6d MB\n", Runtime.getRuntime().maxMemory() / (1024L * 1024L)))
         memInfo.append(String.format("Free:  %6d MB\n", Runtime.getRuntime().freeMemory() / (1024L * 1024L)))
         return ResponseEntity.ok(memInfo.toString())
-    }
+    }*/
 }

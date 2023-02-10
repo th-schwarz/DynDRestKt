@@ -1,6 +1,6 @@
 package codes.thischwa.dyndrestkt
 
-import codes.thischwa.dyndrestkt.config.AutoDnsConfig
+import codes.thischwa.dyndrestkt.provider.impl.domainrobot.AutoDnsConfig
 import mu.KotlinLogging
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties

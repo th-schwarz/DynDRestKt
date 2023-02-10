@@ -1,4 +1,4 @@
-package codes.thischwa.dyndrestkt.config
+package codes.thischwa.dyndrestkt.provider.impl.domainrobot
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -14,22 +14,10 @@ class AutoDnsConfigTest  {
     lateinit var config : AutoDnsConfig
 
     @Test
-    fun testGetUrl() {
+    fun testConfig() {
         assertEquals("https://api.autodns.com/v1", config.url)
-    }
-
-    @Test
-    fun testGetContext() {
         assertEquals(4, config.context)
-    }
-
-    @Test
-    fun testGetUser() {
-        assertEquals("user", config.user)
-    }
-
-    @Test
-    fun testGetPassword() {
-        assertEquals("pwd", config.password)
+        assertEquals("user_t", config.user)
+        assertEquals("pwd_t", config.password)
     }
 }
