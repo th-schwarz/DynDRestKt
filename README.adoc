@@ -1,6 +1,6 @@
 = DynDRestKt
 
-https://github.com/th-schwarz/DynDRestKt[DynDRestKt] rewritten in kotlin, just to learn the language!
+https://github.com/th-schwarz/DynDRest[DynDRest] rewritten in kotlin, just to learn the language!
 
 image:https://github.com/th-schwarz/DynDRestKt/actions/workflows/maven.yml/badge.svg[Build Status]
 
