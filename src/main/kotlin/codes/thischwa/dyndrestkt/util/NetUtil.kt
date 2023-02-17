@@ -59,11 +59,10 @@ class NetUtil {
             val ipSetting = IpSetting()
             var rec: Record? = lookup(hostName, Type.A)
             if (rec != null) {
-                val aRec: ARecord = rec as ARecord
-                ipSetting.ipv4 = aRec.address as Inet4Address?
+                ipSetting.ipv4 = (rec as ARecord).address as Inet4Address
             }
             rec = lookup(hostName, Type.AAAA)
-            if (rec != null) ipSetting.ipv6 = (rec as AAAARecord).address as Inet6Address?
+            if (rec != null) ipSetting.ipv6 = (rec as AAAARecord).address as Inet6Address
             return ipSetting
         }
 
