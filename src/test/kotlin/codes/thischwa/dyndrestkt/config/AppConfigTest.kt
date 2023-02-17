@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest(classes = [AppConfig::class] )
-class AppConfigTest @Autowired constructor(var config : AppConfig) : GenericIntegrationTest() {
+class AppConfigTest @Autowired constructor(val config : AppConfig) : GenericIntegrationTest() {
 
     @Test
     fun test() {

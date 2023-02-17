@@ -6,7 +6,7 @@ import java.net.InetAddress
 import java.net.UnknownHostException
 
 
-class IpSettingTest {
+internal class IpSettingTest {
 
     @Test
     @Throws(UnknownHostException::class)

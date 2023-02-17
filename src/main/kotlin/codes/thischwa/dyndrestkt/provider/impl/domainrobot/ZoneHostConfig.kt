@@ -1,27 +1,20 @@
 package codes.thischwa.dyndrestkt.provider.impl.domainrobot
 
 import mu.KotlinLogging
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
-import org.springframework.stereotype.Service
+import org.springframework.beans.factory.InitializingBean
 import java.util.function.Consumer
 
-
-@ConditionalOnProperty(name = ["dyndrest.provider"], havingValue = "domainrobot")
-@Service
-class ZoneHostConfig {
+class ZoneHostConfig constructor(val zoneHostData: ZoneHostData): InitializingBean {
 
     private val log = KotlinLogging.logger {}
 
     // <zone, ns>
-    final var zoneData: MutableMap<String, String> = HashMap()
+    var zoneData = HashMap<String, String>()
         private set
 
     // <fqdn, apitoken>
-    final var apitokenData: MutableMap<String, String> = HashMap()
+    var apitokenData: MutableMap<String, String> = HashMap()
         private set
-
-    private final var zones: MutableList<Zone> = ArrayList()
 
     fun getConfiguredHosts(): Set<String> {
         return apitokenData.keys
@@ -47,7 +40,7 @@ class ZoneHostConfig {
         return zoneData[zone]
     }
 
-    fun afterPropertiesSet() {
+    override fun afterPropertiesSet() {
         readAndValidate()
         log.info("*** Api-token and zone data are read and validated successful!")
     }
@@ -61,7 +54,7 @@ class ZoneHostConfig {
     fun read() {
         apitokenData.clear()
         zoneData.clear()
-        zones.forEach(Consumer { zone: Zone ->
+        zoneHostData.zones.forEach(Consumer { zone: Zone ->
             readZoneConfig(
                 zone
             )
@@ -91,7 +84,7 @@ class ZoneHostConfig {
     fun validate() {
         require(!(zoneData.isEmpty() || apitokenData.isEmpty())) { "Zone or host data are empty." }
         log.info("*** Configured hosts:")
-        apitokenData.keys.forEach({ host -> log.info(" - {}", host) })
+        apitokenData.keys.forEach { host -> log.info(" - {}", host) }
     }
 
 }
