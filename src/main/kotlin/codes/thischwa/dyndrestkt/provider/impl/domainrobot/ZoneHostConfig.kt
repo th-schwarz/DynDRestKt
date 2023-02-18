@@ -4,7 +4,7 @@ import mu.KotlinLogging
 import org.springframework.beans.factory.InitializingBean
 import java.util.function.Consumer
 
-class ZoneHostConfig constructor(val zoneHostData: ZoneHostData): InitializingBean {
+class ZoneHostConfig(val zoneHostData: ZoneHostData): InitializingBean {
 
     private val log = KotlinLogging.logger {}
 
