@@ -6,14 +6,22 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 
+
 @SpringBootTest(classes = [AppConfig::class] )
-class AppConfigTest @Autowired constructor(val config : AppConfig) : GenericIntegrationTest() {
+class AppConfigTest(private @Autowired val config : AppConfig) : GenericIntegrationTest() {
 
     @Test
     fun test() {
-        assertEquals("domainrobot", config.provider)
         assertFalse(config.hostValidationEnabled)
+        assertTrue(config.greetingEnabled)
+
+        assertEquals("domainrobot", config.provider)
+
+        assertEquals("file:target/test-classes/test-files/dyndrest-update*", config.updateLogFilePattern)
+        assertEquals("(.*)\\s+-\\s+([a-zA-Z\\.-]*)\\s+(\\S*)\\s+(\\S*)", config.updateLogPattern)
+        assertEquals("yyyy-MM-dd HH:mm:SSS", config.updateLogDatePattern)
         assertTrue(config.updateLogPageEnabled)
+        assertEquals(4, config.updateLogPageSize)
         assertEquals("log-dev", config.updateLogUserName)
         assertEquals("l0g-dev", config.updateLogUserPassword)
     }

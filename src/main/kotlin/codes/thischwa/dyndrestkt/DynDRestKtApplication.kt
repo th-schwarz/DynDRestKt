@@ -6,7 +6,6 @@ import org.springframework.boot.runApplication
 
 
 @SpringBootApplication
-
 class DynDRestKtApplication
 
 private val log = KotlinLogging.logger {}

@@ -9,7 +9,15 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix = "domainrobot")
-class ZoneHostData {
-    lateinit var zones: MutableList<Zone>
-}
+class DomainRobotConfig {
 
+    var defaultTtl: Long = 60
+    lateinit var zones: MutableList<Zone>
+
+    class Zone {
+        lateinit var name: String
+        lateinit var ns: String
+        lateinit var hosts: MutableList<String>
+    }
+
+}
